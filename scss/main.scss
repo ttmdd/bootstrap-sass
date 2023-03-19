@@ -1,0 +1,172 @@
+// changing bootstrap variables 
+$primary: #5265E1;
+$secondary: #FA5959;
+
+
+@mixin display-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+// defining media queries 
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media screen and (min-width: 1600px) {
+        @content;
+    }
+}
+
+
+// navigation
+
+nav {
+    z-index: 1030;
+    // padding-bottom: 300px;
+    background-color: $primary;
+
+    @include media-md {
+        background-color: white;
+    }
+
+    ul {
+        padding-top: 50px;
+
+        @include media-md {
+            padding: 0;
+        }
+    }
+
+    li {
+        font-weight:500;
+        font-size: 20px;
+        text-align: center;
+        border-top: 1px solid white;
+        padding: 5px 0;
+        color: white;
+
+        @include media-md {
+            border: none;
+            padding: 0;
+            margin-left: 10px;
+        } 
+
+    }
+
+    li:last-of-type {
+        margin-top: 30px;
+        border: 1px solid white;
+        border-radius: 30px;
+
+        @include media-md {
+            margin-top: 0;
+            border: none;
+            border-radius: 5px;
+            padding: 0 5px;
+            background-color: $secondary;
+        } 
+    }
+
+    .nav-link {
+        color: white;
+
+        @include media-md {
+            color: black;
+        }
+    }
+
+    .navbar-collapse {
+        @include media-md {
+            flex-grow: 0;
+        }
+    }
+
+    #social-icons {
+        margin: 100px 0 30px;
+
+        @include media-md {
+            display: none;
+        }
+    }
+}
+
+// main 
+
+main {
+
+    .landing-image {
+        margin-top: 50px;
+        height: 450px;
+
+        @include media-md {
+            order: 2;
+        }
+    }
+
+    .landing-image img {
+        width: 100%;
+        z-index: 1;
+        position: relative;
+        top: 50px;
+    }
+
+    .bg-box {
+        height: 250px;
+        background-color: $primary;
+        border-radius: 0 0 0 100px;
+        position: relative;
+        top: -200px;
+        left: 100px;
+
+
+        @include media-md {
+            height: 200px;
+            top: -150px;
+        }
+
+        @include media-lg {
+            height: 250px;
+            top: -200px;
+        }
+
+        @include media-xl {
+            height: 350px;
+            top: -300px;
+        }
+    }
+
+    .landing-text {
+        @include display-center;
+
+        .landing-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+
+            button {
+                box-shadow: 10px 10px 20px gray;
+            }
+        }
+
+        @include media-md {
+            order: 1;
+        }
+    }
+
+
+}
+
+// import bootstrap from the node_modules folder
+@import "../node_modules/bootstrap/scss/bootstrap";

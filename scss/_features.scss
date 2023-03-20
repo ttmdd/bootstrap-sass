@@ -1,0 +1,111 @@
+@import "./variables";
+
+.features {
+
+    .features-text {
+        text-align: center;
+        width: 60%;
+        margin: 0 auto 50px;
+
+        @include media-lg {
+            margin-top: 70px;
+        }
+    }
+
+    .nav .nav-item .active {
+        border-bottom: 4px solid red;
+    }
+
+    .nav-item .nav-link {
+        border: 0;
+        padding-bottom: 15px;
+
+        &:focus {
+            border-bottom: 4px solid red;
+        }
+    }
+
+    &-tabs {
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 0 !important;
+
+        @include media-md {
+           flex-direction: row;
+           justify-content: center;
+           border-bottom: 1px solid rgb(139, 132, 132, 0.3) !important;
+        }
+
+        .feature-border {
+            width: 100%;
+            position: relative;
+            margin-bottom: 10px;
+
+            @include media-md {
+                display: none;
+             }
+        }
+
+        .feature-border:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            border-top: 1px solid rgb(139, 132, 132, 0.3);
+        }
+        
+    }
+
+    // image with blue background 
+    .main-box {
+        position: relative;
+        position: relative;
+        height: 350px;
+        width: 100%;
+
+       
+        .img-bckg {
+            width: 80%;
+            max-width: 390px;
+            height: 70%;
+            background-color: $primary;
+            border-radius: 0 0 50px 0;
+            position: absolute;
+            top: 70px;
+
+            @include media-lg {
+                max-width: 450px;
+                height: 80%;
+            }
+        }
+
+        .fetaures-img {
+            height: 70%;
+            position: absolute;
+            z-index: 1;
+            left: 10%;
+            top: 10%;
+
+            @include media-lg {
+                height: 80%;
+                max-width: 600px;
+            }
+        }
+    }
+
+    // text under/to the right of the image
+    .tab-content {
+        text-align: center;
+
+        @include media-md {
+            text-align: left;
+            padding: 100px 30px;
+        }
+
+        @include media-lg {
+            padding-left: 0;
+        }
+    }
+
+}

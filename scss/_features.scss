@@ -63,7 +63,6 @@
         position: relative;
         height: 350px;
         width: 100%;
-
        
         .img-bckg {
             width: 80%;
@@ -97,6 +96,7 @@
     // text under/to the right of the image
     .tab-content {
         text-align: center;
+        // margin-bottom: 50px;
 
         @include media-md {
             text-align: left;

@@ -1,6 +1,7 @@
 @import "./variables";
 
 .features {
+    margin-bottom: 100px;
 
     .features-text {
         text-align: center;
@@ -96,7 +97,6 @@
     // text under/to the right of the image
     .tab-content {
         text-align: center;
-        // margin-bottom: 50px;
 
         @include media-md {
             text-align: left;

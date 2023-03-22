@@ -1,25 +1,31 @@
 @import "./variables";
 
 .features {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    @include media-md {
+        margin-bottom: 100px;
+    }
 
     .features-text {
         text-align: center;
-        width: 60%;
         margin: 0 auto 50px;
 
-        @include media-lg {
-            margin-top: 70px;
+        @include media-md {
+            max-width: 600px;
         }
+
     }
 
+    // first tab (button in html) that is active by default
     .nav .nav-item .active {
         border-bottom: 4px solid red;
     }
 
+    // all tabs (buttons)
     .nav-item .nav-link {
         border: 0;
         padding-bottom: 15px;
+        color: black;
 
         &:focus {
             border-bottom: 4px solid red;
@@ -33,8 +39,10 @@
 
         @include media-md {
            flex-direction: row;
-           justify-content: center;
+           justify-content: space-between;
+           margin: 0 auto;
            border-bottom: 1px solid rgb(139, 132, 132, 0.3) !important;
+           max-width: 600px;
         }
 
         .feature-border {
@@ -58,54 +66,54 @@
         
     }
 
-    // image with blue background 
-    .main-box {
-        position: relative;
-        position: relative;
-        height: 350px;
-        width: 100%;
-       
-        .img-bckg {
-            width: 80%;
-            max-width: 390px;
-            height: 70%;
-            background-color: $primary;
-            border-radius: 0 0 50px 0;
-            position: absolute;
-            top: 70px;
+    // image
+    .spacing {
+        margin-bottom: 100px;
 
-            @include media-lg {
-                max-width: 450px;
-                height: 80%;
-            }
+        .main-box {
+         position: relative;
+
+        .img-bckg {
+            height: 90%;
+            width: 80%;
+            max-width: 500px;
+            position: absolute;
+            background-color: $primary; 
+            border-radius: 0 0 80px 0;
+            top: 30%;
+            left: 0;
+            z-index: -1;
         }
 
-        .fetaures-img {
-            height: 70%;
-            position: absolute;
-            z-index: 1;
-            left: 10%;
-            top: 10%;
-
-            @include media-lg {
-                height: 80%;
-                max-width: 600px;
-            }
+        .features-img {
+            padding: 0 40px;
+        }
         }
     }
 
-    // text under/to the right of the image
+    // description of each tab under / to the right of the image
     .tab-content {
         text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
 
         @include media-md {
             text-align: left;
-            padding: 100px 30px;
+            margin-top: 70px;
         }
 
-        @include media-lg {
-            padding-left: 0;
+        .tab-pane {
+            .no-show {
+                visibility: hidden;
+
+                @include media-md {
+                    visibility: visible;
+                }
+            }
         }
+
     }
+
+  
 
 }

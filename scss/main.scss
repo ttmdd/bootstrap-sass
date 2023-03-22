@@ -4,16 +4,13 @@
 @import "./questions";
 
 
-@mixin display-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+body {
+    p, .accordion-body {
+        @include light-text; 
+    }
 }
 
-
 // navigation
-
 nav {
     z-index: 1030;
     background-color: $primary;
@@ -88,67 +85,64 @@ nav {
 main {
     margin-bottom: 100px;
 
-    .landing-image {
-        margin-top: 100px;
-        height: 450px;
+    .spacing {
+        // margin-bottom: 50px;
 
         @include media-md {
             order: 2;
+         }
+
+        .main-box {
+         position: relative;
+         margin-top: 100px;
+
+        .img-bckg {
+            height: 80%;
+            width: 80%;
+            position: absolute;
+            background-color: $primary; 
+            border-radius: 0 0 0 80px;
+            top: 20%;
+            right: 0;
+            z-index: -1;
+        }
         }
     }
 
-    .landing-image img {
-        width: 100%;
-        z-index: 1;
-        position: relative;
-        top: 50px;
-    }
-
-    .bg-box {
-        height: 250px;
-        background-color: $primary;
-        border-radius: 0 0 0 100px;
-        position: relative;
-        top: -200px;
-        left: 100px;
-
-
-        @include media-md {
-            height: 200px;
-            top: -150px;
-        }
-
-        @include media-lg {
-            height: 250px;
-            top: -200px;
-        }
-
-        @include media-xl {
-            height: 350px;
-            top: -300px;
-        }
-    }
 
     .landing-text {
-        @include display-center;
+            text-align: center;
+            margin-top: 50px;
+
+            @include media-md {
+                margin-top: 150px;
+                text-align: left;
+            }
+
+            @include media-lg {
+                margin-top: 200px;
+                padding: 0 70px;
+            }
+        }
+
 
         .landing-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
 
+            @include media-md {
+                justify-content: start;
+            }
+
             button {
                 box-shadow: 10px 10px 20px gray;
             }
         }
 
-        @include media-md {
-            order: 1;
-        }
     }
 
 
-}
 
 // import bootstrap from the node_modules folder
 @import "../node_modules/bootstrap/scss/bootstrap";

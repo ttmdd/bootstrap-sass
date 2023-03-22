@@ -3,6 +3,13 @@ $primary: #5265E1;
 $secondary: #FA5959;
 $accordion-button-icon: url("/img/icon-arrow.svg");
 
+
+// defining styles 
+@mixin light-text {
+    color: gray;
+    opacity: 0.7; 
+} 
+
 // defining media queries 
 @mixin media-md {
     @media screen and (min-width: 768px) {
@@ -21,3 +28,5 @@ $accordion-button-icon: url("/img/icon-arrow.svg");
         @content;
     }
 }
+
+

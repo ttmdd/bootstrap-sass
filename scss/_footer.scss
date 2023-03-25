@@ -1,0 +1,118 @@
+@import "./variables";
+
+.footer {
+
+   #footer-section-1  {
+        .footer-align {
+            width: 80%;
+            margin: 0 auto;
+
+            @include media-md {
+                max-width: 500px;
+            }
+        }
+
+        h2, p {
+            color: white;
+        }
+
+        form {
+            @include media-md {
+                display: flex;
+                justify-content: space-around;
+                height: 60px;
+            }
+
+            .input-box {
+                @include media-md {
+                    width: 70%;
+                } 
+
+                input {
+                    padding: 10px;
+    
+                    @include media-md {
+                        padding: 15px;
+                    }
+                }
+
+            }
+
+
+            .footer-botton {
+                width: 100%;
+                color: white;
+                padding: 10px;
+    
+                @include media-md {
+                    width: 30%;
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        
+   }
+
+   #footer-section-2 {
+    color: white;
+    background-color: rgb(31, 31, 93);
+    padding: 50px;
+
+    @include media-md {
+        padding: 20px;
+    }
+
+         .footer-align {
+
+             @include media-md {
+                display: flex;
+                justify-content: space-around;
+             }
+
+             #links {
+                display: flex;
+                flex-direction: column;
+
+                @include media-md {
+                    flex-direction: row;
+                 }
+
+                img {
+                    height: 24px;
+                  }
+
+                a {
+                    margin-top: 30px;
+                    color: white;
+                    text-decoration: none;
+                    font-size: 18px;
+
+                    @include media-md {
+                        margin-top: 0;
+                        margin-left: 30px;
+                    }
+                }
+
+                a:first-of-type {
+                    margin-top: 50px;
+
+                    @include media-md {
+                        margin-top: 0;
+                        margin-left: 50px;
+                    }
+                }
+             }
+
+             #social-media {
+                margin-top: 50px;
+
+                @include media-md {
+                    margin-top: 0;
+                }
+             }
+          }
+
+
+   }
+}

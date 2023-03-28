@@ -20,6 +20,15 @@ nav {
         background-color: white;
     }
 
+    .nav-box {
+
+        @include media-lg {
+            max-width: 80%;
+            padding-top: 10px;
+        }
+    }
+
+
     ul {
         padding-top: 50px;
 
@@ -86,8 +95,11 @@ nav {
 main {
     margin-bottom: 100px;
 
-    .spacing {
-        // margin-bottom: 50px;
+    .main-spacing {
+        padding-top: 100px;
+    }
+
+    .main-img {
 
         @include media-md {
             order: 2;
@@ -95,7 +107,6 @@ main {
 
         .main-box {
          position: relative;
-         margin-top: 100px;
 
         .img-bckg {
             height: 80%;
@@ -107,22 +118,28 @@ main {
             right: 0;
             z-index: -1;
         }
+
+        img {
+            width: 100%;
+        }
         }
     }
 
 
     .landing-text {
-            text-align: center;
-            margin-top: 50px;
 
-            @include media-md {
-                margin-top: 150px;
-                text-align: left;
-            }
+            .text-box {
+                text-align: center;
+                margin-top: 30px;
 
-            @include media-lg {
-                margin-top: 200px;
-                padding: 0 70px;
+                @include media-md {
+                    text-align: left;
+                }
+
+                @include media-lg {
+                    max-width: 500px;
+                    margin: 50px auto;
+                }
             }
         }
 
